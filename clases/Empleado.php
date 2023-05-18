@@ -69,7 +69,7 @@ class Empleado extends Conexion{
             //empty => verifica si algo esta vacio o no
             if(!empty($result)){
                 //redireccionando al index
-                header("location: index.php");
+                header("location: empleado.php");
             }else{
                 echo "Error al registrar el empleado";
             }

@@ -59,7 +59,7 @@ class Administrador extends Conexion{
             //empty => verifica si algo esta vacio o no
             if(!empty($result)){
                 //redireccionando al index
-                header("location: index.php");
+                header("location: administrador.php");
             }else{
                 echo "Error al registrar al administrador";
             }
@@ -79,7 +79,7 @@ class Administrador extends Conexion{
         if(isset($_POST['id_administrador'])){
             $this->id = $_POST['id_administrador'];
             $this->conectar();
-            $query = "SELECT administrador.*, departamento.nombre AS departamento FROM administrador INNER JOIN departamento ON administrador.id_departamento = departamento.id INNER JOIN cargo ON administrador.id_cargo = cargo.id WHERE administrador.id = $this->id";
+            $query = "SELECT administrador.*, departamento.nombre AS departamento FROM administrador INNER JOIN departamento ON administrador.id_departamento = departamento.id WHERE administrador.id = $this->id";
             $result = mysqli_query($this->conexion, $query);
             return $result; //[]
         }
