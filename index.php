@@ -9,7 +9,7 @@
     <title>CRUD EMPLEADOS</title>
 </head>
 <body>
-    <?php 
+<?php 
         require "clases/Autenticar.php";
         $autenticar = new Autenticar();
     ?>
