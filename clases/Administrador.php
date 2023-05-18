@@ -25,14 +25,6 @@ class Administrador extends Conexion{
         return $resultado;
     }
 
-    public function cargos(){
-        $this->conectar();
-        $query = "SELECT * FROM cargo";
-        //ejecutando la consulta => mysqli_query()
-        $resultado3 = mysqli_query($this->conexion, $query);
-        return $resultado3;
-    }
-
     public function roles(){
         $this->conectar();
         $query = "SELECT * FROM rol";
@@ -44,7 +36,7 @@ class Administrador extends Conexion{
     //metodo para registrar al administrador utilizando el formulario de html
     public function insertar(){
         //isset() => verifica si los campos del formulario no estan vacios
-        if(isset($_POST['nombre'], $_POST['apellido'], $_POST['salario'], $_POST['carnet'], $_POST['telefono'], $_POST['correo'], $_POST['password'], $_POST['departamento'], $_POST['cargo'])){
+        if(isset($_POST['nombre'], $_POST['apellido'], $_POST['salario'], $_POST['carnet'], $_POST['telefono'], $_POST['correo'], $_POST['password'], $_POST['departamento'])){
 
             //asignando a las propiedades los campos del formulario
             $this->nombre = $_POST['nombre'];
@@ -96,7 +88,7 @@ class Administrador extends Conexion{
 
     //actualizando el administrador
     public function actualizar(){
-        if(isset($_POST['nombre'], $_POST['apellido'], $_POST['salario'], $_POST['carnet'], $_POST['telefono'], $_POST['correo'], $_POST['password'], $_POST['departamento'], $_POST['cargo'], $_POST['id_administrador'])){
+        if(isset($_POST['nombre'], $_POST['apellido'], $_POST['salario'], $_POST['carnet'], $_POST['telefono'], $_POST['correo'], $_POST['password'], $_POST['departamento'], $_POST['id_administrador'])){
 
             //asignando a las propiedades los campos del formulario
             $this->nombre = $_POST['nombre'];

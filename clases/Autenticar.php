@@ -13,6 +13,7 @@ class Autenticar extends Conexion{
 
             $this->conectar();
             $query = "SELECT correo, password, nombre, id FROM empleado WHERE correo = '$this->correo' AND password = '$this->password' AND id_estado = 1";
+            $query = "SELECT correo, password, nombre, id FROM administrador WHERE correo = '$this->correo' AND password = '$this->password' AND id_estado = 1";
             $result = mysqli_query($this->conexion, $query);
             /**
              * mysqli_num_rows: cuenta si la consulta lleva filas o no (lleva registros)
