@@ -59,7 +59,7 @@ class Administrador extends Conexion{
             //empty => verifica si algo esta vacio o no
             if(!empty($result)){
                 //redireccionando al index
-                header("location: administrador.php");
+                header("location: administradores.php");
             }else{
                 echo "Error al registrar al administrador";
             }
@@ -102,7 +102,7 @@ class Administrador extends Conexion{
             $this->id = $_POST['id_administrador'];
 
             //consulta para actualizar un administrador por su id
-            $query = "UPDATE administrador SET nombre = '$this->nombre', apellido = '$this->apellido', salario = $this->salario, carnet = '$this->carnet', telefono = $this->telefono, correo = '$this->correo', password = '$this->password', id_departamento = $this->id_departamento, WHERE id = $this->id";
+            $query = "UPDATE administrador SET nombre = '$this->nombre', apellido = '$this->apellido', salario = $this->salario, carnet = '$this->carnet', telefono = $this->telefono, correo = '$this->correo', password = '$this->password', id_departamento = $this->id_departamento WHERE id = $this->id";
 
             $result = mysqli_query($this->conexion, $query);
             //validando que se haya guardado el registro y retorne a otra vista
